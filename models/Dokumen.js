@@ -25,6 +25,16 @@ module.exports = (sequelize, DataTypes) => {
     fileSertifikat: {
       type: DataTypes.STRING,
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.fn("NOW"),
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.fn("NOW"),
+    },
   });
 
   Dokumen.associate = function (models) {

@@ -2,10 +2,10 @@
 
 const fs = require("fs");
 const path = require("path");
-const { sequelize } = require("./models");
+const Sequelize = require("sequelize");
 const process = require("process");
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || "development";
+const env = process.env.NODE_ENV || "production";
 const config = require(__dirname + "/../config/config.js")[env];
 const db = {};
 
@@ -20,15 +20,6 @@ if (config.use_env_variable) {
     config
   );
 }
-
-sequelize
-  .sync({ force: true })
-  .then(() => {
-    console.log("Database synchronized successfully");
-  })
-  .catch((error) => {
-    console.error("Error while synchronizing: ", error);
-  });
 
 fs.readdirSync(__dirname)
   .filter((file) => {
