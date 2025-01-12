@@ -1,4 +1,4 @@
-// filepath: /D:/TUGAS KULIAH/SEMESTER 7/project skripsi/Backend/service-Sekolah/routes/handler/pendaftaran/updatePendaftaran.js
+// filepath: /D:/TUGAS KULIAH/SEMESTER 7/project skripsi/Backend/service-Sekolah/routes/handler/pendaftaran/update.js
 const { Pendaftaran } = require("../../../models");
 
 module.exports = async (req, res) => {
@@ -55,6 +55,23 @@ module.exports = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "Pendaftaran updated successfully",
+      data: {
+        id: pendaftaran.id,
+        nama,
+        tempat_lahir,
+        tanggal_lahir,
+        nama_ortu,
+        alamat,
+        no_Hp,
+        nik,
+        jenis_kelamin,
+        asal_sekolah,
+        nilai_IPA,
+        nilai_Matematika,
+        nilai_Bhs_Indonesia,
+        nilai_rata,
+        status,
+      },
     });
   } catch (error) {
     console.error("Error updating pendaftaran:", error);

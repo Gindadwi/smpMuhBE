@@ -6,6 +6,6 @@ const authenticate = require("../middlewares/authenticate");
 router.post("/daftarSiswa", authenticate, pendaftaranHandler.postPendaftaran);
 router.get("/", authenticate, pendaftaranHandler.getAll);
 router.get("/:id", authenticate, pendaftaranHandler.getID);
-router.get("/update", authenticate, pendaftaranHandler.update);
+router.put("/update/:id", authenticate, pendaftaranHandler.update);
 
 module.exports = router;
