@@ -62,6 +62,7 @@ module.exports = async (req, res) => {
       data: {
         id: pendaftaran.id,
       },
+      pendaftaran,
     });
   } catch (error) {
     console.error("Error during creation:", error);

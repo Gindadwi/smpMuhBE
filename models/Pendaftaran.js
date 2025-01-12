@@ -115,7 +115,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Pendaftaran.belongsTo(models.Dokumen, {
       as: "Dokumen",
-      foreignKey: "dokumen_id",
+      foreignKey: "id_dokumen",
     });
 
     Pendaftaran.belongsTo(models.Admin, {
