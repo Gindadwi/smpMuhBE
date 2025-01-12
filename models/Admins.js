@@ -35,12 +35,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Admin.associate = (models) => {
     Admin.hasMany(models.InformasiPendaftaran, {
-      foreignKey: "admin_id",
+      foreignKey: "id_admin",
       as: "InformasiPendaftaran",
     });
 
     Admin.hasMany(models.Pendaftaran, {
-      foreignKey: "admin_id",
+      foreignKey: "id_admin",
       as: "Pendaftaran",
     });
   };

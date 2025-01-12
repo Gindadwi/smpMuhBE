@@ -39,14 +39,27 @@ module.exports = async (req, res) => {
     }
 
     try {
-      const { id_pendaftaran } = req.body;
-
-      if (!id_pendaftaran) {
+      // Pastikan req.user tersedia (token sudah terverifikasi di middleware)
+      if (!req.user) {
         return res.status(400).json({
           status: "error",
-          message: "id_pendaftaran is required",
+          message: "User not authenticated",
         });
       }
+
+      const id_users = req.user.id;
+
+      // Cari pendaftaran berdasarkan id_users
+      const pendaftaran = await Pendaftaran.findOne({ where: { id_users } });
+
+      if (!pendaftaran) {
+        return res.status(404).json({
+          status: "error",
+          message: "Pendaftaran not found",
+        });
+      }
+
+      const id_pendaftaran = pendaftaran.id;
 
       if (!req.files.fileKK || !req.files.fileSKHUN) {
         return res.status(400).json({

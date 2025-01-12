@@ -90,6 +90,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      status: {
+        type: DataTypes.STRING,
+        defaultValue: "Pending",
+      },
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -110,7 +114,7 @@ module.exports = (sequelize, DataTypes) => {
   Pendaftaran.associate = (models) => {
     Pendaftaran.belongsTo(models.User, {
       as: "User",
-      foreignKey: "users_id",
+      foreignKey: "id_users",
     });
 
     Pendaftaran.belongsTo(models.Dokumen, {
@@ -120,7 +124,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Pendaftaran.belongsTo(models.Admin, {
       as: "Admin",
-      foreignKey: "admin_id",
+      foreignKey: "id_admin",
     });
   };
 
