@@ -22,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       id_dokumen: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
           model: "Dokumen",
           key: "id",
@@ -32,7 +31,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       id_admin: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
           model: "Admins",
           key: "id",
@@ -61,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       no_Hp: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       nik: {
