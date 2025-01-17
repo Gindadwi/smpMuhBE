@@ -9,6 +9,8 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const pendaftaranRouter = require("./routes/pendaftaran");
 const dokumenRouter = require("./routes/dokumen");
+const adminRouter = require("./routes/admin");
+const informasiRouter = require("./routes/informasiPendaftaran");
 
 const app = express();
 
@@ -20,7 +22,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/admin", adminRouter);
 app.use("/pendaftaran", pendaftaranRouter);
 app.use("/dokumen", dokumenRouter);
+app.use("/informasi", informasiRouter);
 
 module.exports = app;

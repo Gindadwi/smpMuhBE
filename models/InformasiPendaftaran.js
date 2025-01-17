@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
 
   InformasiPendaftaran.associate = (models) => {
     InformasiPendaftaran.belongsTo(models.Admin, {
-      foreignKey: "admin_id",
+      foreignKey: "id_admin",
       as: "Admin",
     });
   };
