@@ -20,18 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
 app.use("/pendaftaran", pendaftaranRouter);
 app.use("/dokumen", dokumenRouter);
 app.use("/informasi", informasiRouter);
-
-// Jalankan server di port dari ENV atau 3000
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
 
 module.exports = app;
