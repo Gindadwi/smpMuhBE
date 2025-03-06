@@ -1,6 +1,6 @@
 ## apa saja yang di install untuk membuat service user
 
-- express --no-vie service-user
+- npm
 - masuk ke dalam service user (cd service-user)
 - npm install
 - npm install dotenv
