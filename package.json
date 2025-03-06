@@ -4,8 +4,9 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-"start": "node app.js",
-    "postinstall": "npx sequelize-cli db:migrate"  },
+    "start": "node app.js",
+    "postinstall": "npx sequelize-cli db:migrate"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "~1.4.4",
